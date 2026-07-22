@@ -153,10 +153,151 @@ hr {
   color: var(--color-primary);
 }
 
+/* ============ Education Table ============ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--color-white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+table, th, td {
+  border: 1px solid var(--color-border);
+}
+
+th {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  text-align: left;
+  padding: 14px 18px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+td {
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  color: var(--color-gray);
+}
+
+tr:hover td {
+  background-color: var(--color-light-bg);
+}
+
+/* ============ Contact Form ============ */
+#contact form {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 600px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+
+  display: flex;
+  flex-direction: column;
+}
+
+#contact label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+  margin-top: 16px;
+  color: var(--color-dark);
+}
+
+#contact label[for="name"] {
+  margin-top: 0;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--color-dark);
+  background-color: var(--color-light-bg);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+#contact input[type="text"]:focus,
+#contact input[type="email"]:focus,
+#contact textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(26, 77, 143, 0.12);
+  background-color: var(--color-white);
+}
+
+#contact textarea {
+  resize: vertical;
+}
+
+#contact input[type="submit"] {
+  margin-top: 24px;
+  align-self: flex-start;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+#contact input[type="submit"]:hover {
+  background-color: var(--color-primary-light);
+  transform: translateY(-2px);
+}
+
+/* ============ Footer ============ */
 footer {
   background-color: var(--color-dark);
   color: var(--color-white);
   text-align: center;
   padding: 22px;
   margin-top: 40px;
+}
+
+/* ============ Responsive (Laptop / smaller screens) ============ */
+@media (max-width: 900px) {
+  header {
+    padding: 20px 24px;
+    text-align: center;
+  }
+
+  nav {
+    margin-left: 0;
+    margin-top: 12px;
+    flex-basis: 100%;
+    order: 3;
+  }
+
+  header p {
+    order: 4;
+  }
+
+  header img {
+    order: 5;
+  }
+
+  main {
+    padding: 30px 16px;
+  }
+
+  #skills ul li {
+    flex: 1 1 45%;
+  }
+
+  #contact form {
+    max-width: 100%;
+  }
 }
