@@ -12,6 +12,8 @@
   --color-light-bg: #f4f6f9;
   --color-white: #ffffff;
   --color-border: #dfe3e8;
+  --color-error: #c0392b;
+  --color-success: #1a8f4d;
 }
 
 html {
@@ -257,6 +259,12 @@ tr:hover td {
   background-color: var(--color-white);
 }
 
+#contact input.input-error,
+#contact textarea.input-error {
+  border-color: var(--color-error);
+  background-color: #fdf1f0;
+}
+
 #contact textarea {
   resize: vertical;
   width: 100%;
@@ -280,6 +288,28 @@ tr:hover td {
 #contact input[type="submit"]:hover {
   background-color: var(--color-primary-light);
   transform: translateY(-0.125rem);
+}
+
+.error-message {
+  display: block;
+  color: var(--color-error);
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  min-height: 1rem;
+}
+
+.form-status {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.form-status.success {
+  color: var(--color-success);
+}
+
+.form-status.error {
+  color: var(--color-error);
 }
 
 footer {
@@ -358,6 +388,12 @@ body.dark-mode #contact textarea {
   background-color: #14161a;
   border-color: #2e323a;
   color: #e6e8eb;
+}
+
+body.dark-mode #contact input.input-error,
+body.dark-mode #contact textarea.input-error {
+  background-color: #2a1a18;
+  border-color: #e57368;
 }
 
 body.dark-mode footer {

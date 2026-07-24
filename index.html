@@ -102,11 +102,13 @@ I'm also interested in machine learning and continuously learning new technologi
 
 <label for="name">Full Name</label><br>
 <input type="text" id="name" name="name" required>
+<span class="error-message" id="name-error"></span>
 
 <br><br>
 
 <label for="email">Email Address</label><br>
 <input type="email" id="email" name="email" required>
+<span class="error-message" id="email-error"></span>
 
 <br><br>
 
@@ -117,10 +119,13 @@ name="message"
 rows="5"
 cols="40"
 required></textarea>
+<span class="error-message" id="message-error"></span>
 
 <br><br>
 
 <input type="submit" value="Send Message">
+
+<p id="form-status" class="form-status"></p>
 
 </form>
 
