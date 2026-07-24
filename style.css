@@ -27,6 +27,7 @@ body {
   font-size: 1rem;
   width: 100%;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2 {
@@ -49,13 +50,13 @@ img {
   display: block;
 }
 
-/* ============ Header (mobile) ============ */
 header {
   background-color: var(--color-white);
   padding: 1.5rem 1.2rem;
   border-bottom: 1px solid var(--color-border);
   text-align: center;
   width: 100%;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 header h1 {
@@ -80,6 +81,7 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 0.5rem 1rem;
   font-size: 0.95rem;
   width: 100%;
@@ -95,6 +97,24 @@ nav a {
 
 nav a:hover {
   color: var(--color-primary);
+}
+
+#theme-toggle {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+#theme-toggle:hover {
+  background-color: var(--color-primary-light);
+  transform: translateY(-0.125rem);
 }
 
 main {
@@ -126,7 +146,6 @@ hr {
   margin: 2.2rem 0;
 }
 
-/* ============ Skills — mobile: 1 column grid ============ */
 #skills ul {
   list-style: none;
   width: 100%;
@@ -145,7 +164,7 @@ hr {
   font-weight: 500;
   color: var(--color-dark);
   box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.04);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, color 0.25s ease, background-color 0.3s ease;
 }
 
 #skills ul li:hover {
@@ -155,7 +174,6 @@ hr {
   color: var(--color-primary);
 }
 
-/* ============ Education Table — mobile: shrink font, no overflow ============ */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -165,6 +183,7 @@ table {
   box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.04);
   font-size: 0.8rem;
   table-layout: fixed;
+  transition: background-color 0.3s ease;
 }
 
 table, th, td {
@@ -190,7 +209,6 @@ tr:hover td {
   background-color: var(--color-light-bg);
 }
 
-/* ============ Contact Form — mobile: full width ============ */
 #contact form {
   background-color: var(--color-white);
   border: 1px solid var(--color-border);
@@ -201,6 +219,7 @@ tr:hover td {
   box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 #contact label {
@@ -272,6 +291,79 @@ footer {
   font-size: 0.9rem;
 }
 
+/* ============ Dark Mode ============ */
+body.dark-mode {
+  background-color: #14161a;
+  color: #e6e8eb;
+}
+
+body.dark-mode header {
+  background-color: #1e2126;
+  border-bottom-color: #2e323a;
+}
+
+body.dark-mode header p {
+  color: #b7bcc4;
+}
+
+body.dark-mode nav a {
+  color: #e6e8eb;
+}
+
+body.dark-mode nav a:hover {
+  color: #6fa3e0;
+}
+
+body.dark-mode #skills ul li {
+  background-color: #1e2126;
+  border-color: #2e323a;
+  color: #e6e8eb;
+}
+
+body.dark-mode #skills ul li:hover {
+  color: #6fa3e0;
+  border-color: #6fa3e0;
+}
+
+body.dark-mode table {
+  background-color: #1e2126;
+}
+
+body.dark-mode table, 
+body.dark-mode th, 
+body.dark-mode td {
+  border-color: #2e323a;
+}
+
+body.dark-mode td {
+  color: #b7bcc4;
+}
+
+body.dark-mode tr:hover td {
+  background-color: #24272d;
+}
+
+body.dark-mode #contact form {
+  background-color: #1e2126;
+  border-color: #2e323a;
+}
+
+body.dark-mode #contact label {
+  color: #e6e8eb;
+}
+
+body.dark-mode #contact input[type="text"],
+body.dark-mode #contact input[type="email"],
+body.dark-mode #contact textarea {
+  background-color: #14161a;
+  border-color: #2e323a;
+  color: #e6e8eb;
+}
+
+body.dark-mode footer {
+  background-color: #0c0d0f;
+}
+
 /* ======================================================
    TABLET — min-width: 768px
    ====================================================== */
@@ -321,7 +413,6 @@ footer {
     font-size: 1.7rem;
   }
 
-  /* Skills: 2 columns on tablet */
   #skills ul {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
@@ -356,7 +447,6 @@ footer {
     max-width: 62.5rem;
   }
 
-  /* Skills: 4 columns on desktop */
   #skills ul {
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;

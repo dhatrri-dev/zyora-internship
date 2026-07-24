@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -29,6 +30,7 @@
         <a href="#skills">Skills</a> |
         <a href="#education">Education</a> |
         <a href="#contact">Contact</a>
+        <button id="theme-toggle" type="button">🌙 Dark Mode</button>
     </nav>
 
 </header>
@@ -96,7 +98,7 @@ I'm also interested in machine learning and continuously learning new technologi
 
 <h2>Contact</h2>
 
-<form>
+<form id="contact-form" novalidate>
 
 <label for="name">Full Name</label><br>
 <input type="text" id="name" name="name" required>
