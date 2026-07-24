@@ -13,7 +13,9 @@
   --color-white: #ffffff;
   --color-border: #dfe3e8;
   --color-error: #c0392b;
+  --color-error-bg: #fdf1f0;
   --color-success: #1a8f4d;
+  --color-success-bg: #eafaf1;
 }
 
 html {
@@ -117,6 +119,10 @@ nav a:hover {
 #theme-toggle:hover {
   background-color: var(--color-primary-light);
   transform: translateY(-0.125rem);
+}
+
+#theme-toggle:active {
+  transform: translateY(0);
 }
 
 main {
@@ -247,7 +253,7 @@ tr:hover td {
   font-size: 0.95rem;
   color: var(--color-dark);
   background-color: var(--color-light-bg);
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 }
 
 #contact input[type="text"]:focus,
@@ -262,7 +268,12 @@ tr:hover td {
 #contact input.input-error,
 #contact textarea.input-error {
   border-color: var(--color-error);
-  background-color: #fdf1f0;
+  background-color: var(--color-error-bg);
+}
+
+#contact input.input-error:focus,
+#contact textarea.input-error:focus {
+  box-shadow: 0 0 0 0.1875rem rgba(192, 57, 43, 0.15);
 }
 
 #contact textarea {
@@ -290,26 +301,42 @@ tr:hover td {
   transform: translateY(-0.125rem);
 }
 
+#contact input[type="submit"]:active {
+  transform: translateY(0);
+}
+
 .error-message {
   display: block;
   color: var(--color-error);
   font-size: 0.8rem;
   margin-top: 0.3rem;
   min-height: 1rem;
+  font-weight: 500;
 }
 
 .form-status {
-  margin-top: 1rem;
+  margin-top: 1.2rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
   font-size: 0.9rem;
   font-weight: 500;
+  display: none;
+}
+
+.form-status.visible {
+  display: block;
 }
 
 .form-status.success {
   color: var(--color-success);
+  background-color: var(--color-success-bg);
+  border: 1px solid var(--color-success);
 }
 
 .form-status.error {
   color: var(--color-error);
+  background-color: var(--color-error-bg);
+  border: 1px solid var(--color-error);
 }
 
 footer {
@@ -394,6 +421,18 @@ body.dark-mode #contact input.input-error,
 body.dark-mode #contact textarea.input-error {
   background-color: #2a1a18;
   border-color: #e57368;
+}
+
+body.dark-mode .form-status.success {
+  background-color: #123324;
+  border-color: #2ecc71;
+  color: #6fe0a0;
+}
+
+body.dark-mode .form-status.error {
+  background-color: #2a1a18;
+  border-color: #e57368;
+  color: #f0a39a;
 }
 
 body.dark-mode footer {
